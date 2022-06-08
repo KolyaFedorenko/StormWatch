@@ -19,7 +19,3 @@
 | [bumptech/glide](https://github.com/bumptech/glide) | Load images by URL and insert them into ImageViews |
 | [google/volley](https://github.com/google/volley) | Send GET requests and receive JSON responses |
 | [google/gson](https://github.com/google/gson) | Serialize and deserialize JSON |
-
-### Integrated into github project:
-- Github Actions: to automatically build a project and generate APK and AAB files
-- LGTM: for checking code quality and identifying possible vulnerabilities
