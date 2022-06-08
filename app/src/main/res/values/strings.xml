@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">MovieReviewer</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="movie_title">Movie Title</string>
+    <string name="movie_year">Movie Year</string>
+    <string name="movie_tags">Movie Tags</string>
+    <string name="add_tag">Add Tag</string>
+    <string name="plot_rating">Plot</string>
+    <string name="cast_rating">Cast</string>
+    <string name="visual_rating">Visual</string>
+    <string name="save_rating">Save Rating For This Movie</string>
+    <string name="watch_storm">WatchStorm</string>
+    <string name="select_image">Select Image</string>
+    <string name="test_average_rating">60%</string>
+    <string name="averageRating">Average Rating:</string>
+    <string name="movie_description">Movie Description</string>
+    <string name="your_average_rating">Your Average Rating</string>
+    <string name="audience_average_rating">Audience Average Rating</string>
+    <string name="edit_movie">Edit this movie</string>
+    <string name="delete_movie">Delete this movie</string>
+</resources>
