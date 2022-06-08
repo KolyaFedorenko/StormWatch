@@ -7,8 +7,11 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 public class ViewPagerAdapter extends FragmentStateAdapter {
 
-    public ViewPagerAdapter(FragmentActivity fragmentActivity){
+    private String login;
+
+    public ViewPagerAdapter(FragmentActivity fragmentActivity, String login){
         super(fragmentActivity);
+        this.login = login;
     }
 
     @NonNull
@@ -16,9 +19,9 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position){
             default:
-                return new AddMovieFragment();
+                return new AddMovieFragment(login);
             case 1:
-                return new MoviesFragment();
+                return new MoviesFragment(login);
             case 2:
                 return new ProfileFragment();
         }

@@ -8,16 +8,15 @@
     android:background="@color/grayPrimary"
     tools:context=".ProfileFragment">
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottieAnimationView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <Button
+        android:id="@+id/buttonSignOut"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:lottie_rawRes="@raw/data"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"/>
+        android:background="@drawable/rounded_button_black"
+        android:text="@string/sign_out"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

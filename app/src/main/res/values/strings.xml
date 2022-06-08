@@ -18,4 +18,9 @@
     <string name="audience_average_rating">Audience Average Rating</string>
     <string name="edit_movie">Edit this movie</string>
     <string name="delete_movie">Delete this movie</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_out">Sign Out</string>
 </resources>

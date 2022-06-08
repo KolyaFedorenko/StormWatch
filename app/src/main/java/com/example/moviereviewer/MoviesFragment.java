@@ -26,11 +26,14 @@ import java.util.ArrayList;
 
 public class MoviesFragment extends Fragment implements MovieAdapter.MovieAdapterInterface {
 
+    private String login;
     private DatabaseReference databaseReference;
     private ArrayList<Movie> movies;
     private MovieAdapter movieAdapter;
 
-    public MoviesFragment() { }
+    public MoviesFragment(String login) {
+        this.login = login;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,7 +43,7 @@ public class MoviesFragment extends Fragment implements MovieAdapter.MovieAdapte
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        databaseReference = FirebaseDatabase.getInstance().getReference("KolyaFedorenko/Movies");
+        databaseReference = FirebaseDatabase.getInstance().getReference("WatchStorm/" + login + "/Movies");
         return inflater.inflate(R.layout.fragment_movies, container, false);
     }
 
