@@ -44,7 +44,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class AddMovieFragment extends Fragment {
 
-    public AddMovieFragment() { }
+    private String login;
 
     private EditText editMovieTitle, editMovieYear, editMovieDescription;
     private EditText editPlotRating, editCastRating, editVisualRating;
@@ -63,6 +63,10 @@ public class AddMovieFragment extends Fragment {
 
     private Result receivedResult;
 
+    public AddMovieFragment(String login) {
+        this.login = login;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,8 +76,8 @@ public class AddMovieFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_add_movie, container, false);
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("KolyaFedorenko/Movies");
-        storageReference = FirebaseStorage.getInstance().getReference().child("KolyaFedorenko/Images");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("WatchStorm/" + login +"/Movies");
+        storageReference = FirebaseStorage.getInstance().getReference().child("WatchStorm/" + login + "/Images");
         findViews(view);
         return view;
     }
