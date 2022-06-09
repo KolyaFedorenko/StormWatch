@@ -23,7 +23,7 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
             case 1:
                 return new MoviesFragment(login);
             case 2:
-                return new ProfileFragment();
+                return new ProfileFragment(login);
         }
     }
 
