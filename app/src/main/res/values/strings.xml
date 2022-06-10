@@ -29,4 +29,11 @@
     <string name="change_password">Change my password</string>
     <string name="delete_my_account">Delete my account</string>
     <string name="how_to_use_this_app">How to use this app?</string>
+    <string name="account_deleting">Account Deleting</string>
+    <string name="account_deleting_caution">Are you sure you want to delete your account?
+        All information associated with your account will be deleted.</string>
+    <string name="account_deleting_instruction">If you really want to delete your account,
+        please enter your username in the text field below and long press on it</string>
+    <string name="deleting_confirmation">I really want to delete my account</string>
+    <string name="your_username">Your Username</string>
 </resources>
