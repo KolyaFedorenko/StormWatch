@@ -77,15 +77,17 @@ public class MainActivity extends AppCompatActivity implements ProfileFragment.S
         new TabLayoutMediator(tabLayout, viewPager2, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override
             public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
-                switch (position + 1){
-                    case 1:
+                switch (position){
+                    case 0:
                         tab.setText("Add");
                         break;
-                    case 2:
+                    case 1:
                         tab.setText("Movies");
                         break;
-                    case 3:
+                    case 2:
                         tab.setText("Profile");
+                        break;
+                    default:
                         break;
                 }
             }

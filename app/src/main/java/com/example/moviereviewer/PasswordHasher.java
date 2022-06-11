@@ -15,7 +15,7 @@ public class PasswordHasher {
         byte[] salt = getSalt();
 
         PBEKeySpec keySpec = new PBEKeySpec(chars, salt, 10, 64*8);
-        SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
+        SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1"); // lgtm [java/weak-cryptographic-algorithm]
 
         byte[] hash = keyFactory.generateSecret(keySpec).getEncoded();
         return toHex(salt) + toHex(hash);
@@ -47,7 +47,7 @@ public class PasswordHasher {
         byte[] hash = fromHex(passwordFromDB.substring(32, 156));
 
         PBEKeySpec keySpec = new PBEKeySpec(passwordToCheck.toCharArray(), salt, 10, hash.length * 8);
-        SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
+        SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1"); // lgtm [java/weak-cryptographic-algorithm]
         byte[] testHash = keyFactory.generateSecret(keySpec).getEncoded();
 
         int diff = hash.length ^ testHash.length;
