@@ -51,7 +51,7 @@ public class ProfileFragment extends Fragment implements ViewableFragment {
     private Button buttonSingOut;
     private TextView textLogin, textStatus;
     private CircleImageView imageProfile;
-    private ConstraintLayout clFavoriteMovies;
+    private ConstraintLayout clFavoriteMovies, clDeleteMyAccount;
     private RecyclerView recyclerViewFavorites;
 
     public ProfileFragment(String login) {
@@ -92,6 +92,7 @@ public class ProfileFragment extends Fragment implements ViewableFragment {
         textStatus = view.findViewById(R.id.textStatus);
         imageProfile = view.findViewById(R.id.imageProfile);
         clFavoriteMovies = view.findViewById(R.id.clFavoriteMovies);
+        clDeleteMyAccount = view.findViewById(R.id.clDeleteMyAccount);
         recyclerViewFavorites = view.findViewById(R.id.recyclerViewFavorites);
     }
 
@@ -138,6 +139,20 @@ public class ProfileFragment extends Fragment implements ViewableFragment {
                     recyclerViewFavorites.setVisibility(View.GONE);
                     favoritesShowed = false;
                 }
+            }
+        });
+
+        clDeleteMyAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AccountDeletingDialog accountDeletingDialog = new AccountDeletingDialog(login);
+                accountDeletingDialog.createDialog(getActivity(), true, R.layout.delete_account_dialog);
+                accountDeletingDialog.setOnAccountDeleteListener(new AccountDeletingDialog.OnAccountDeleteListener() {
+                    @Override
+                    public void onAccountDelete() {
+                        signOutListener.onSignOut();
+                    }
+                });
             }
         });
 

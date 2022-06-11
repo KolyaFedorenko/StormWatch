@@ -18,12 +18,14 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         switch (position){
-            default:
+            case 0:
                 return new AddMovieFragment(login);
             case 1:
                 return new MoviesFragment(login);
             case 2:
                 return new ProfileFragment(login);
+            default:
+                return new Fragment();
         }
     }
 

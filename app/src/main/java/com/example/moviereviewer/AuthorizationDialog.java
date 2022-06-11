@@ -32,15 +32,8 @@ public class AuthorizationDialog extends CustomDialog {
     private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("WatchStorm");
 
     @Override
-    public void showDialog(Activity activity) {
-        final Dialog dialog = new Dialog(activity);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setCancelable(false);
-        dialog.setContentView(R.layout.authorization_dialog);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        findViews(dialog);
-        useViews(dialog);
-        dialog.show();
+    public Dialog createDialog(Activity activity, boolean cancelable, int resource) {
+        return super.createDialog(activity, cancelable, resource);
     }
 
     @Override
