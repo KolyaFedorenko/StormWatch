@@ -20,11 +20,16 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class AccountDeletingDialog extends CustomDialog {
 
+    public interface OnAccountDeleteListener{
+        void onAccountDelete();
+    }
+    private OnAccountDeleteListener listener;
+
     private ConstraintLayout constraintDeleteAccount;
     private EditText dialogEditDeletingUser;
     private String login;
     private boolean deletionConfirmed = false;
-    private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+    private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("WatchStorm");
 
     public AccountDeletingDialog(String login){
         this.login = login;
@@ -78,8 +83,15 @@ public class AccountDeletingDialog extends CustomDialog {
         dialogEditDeletingUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (deletionConfirmed) Toast.makeText(context, "Clicked!", Toast.LENGTH_SHORT).show();
+                if (deletionConfirmed && listener != null) {
+                    databaseReference.child(login).removeValue();
+                    listener.onAccountDelete();
+                }
             }
         });
+    }
+
+    public void setOnAccountDeleteListener(OnAccountDeleteListener listener){
+        this.listener = listener;
     }
 }
