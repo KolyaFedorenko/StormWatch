@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements ProfileFragment.S
 
     private void showAuthorizationDialog(){
         AuthorizationDialog authorizationDialog = new AuthorizationDialog();
-        authorizationDialog.showDialog(this);
+        authorizationDialog.createDialog(this, false, R.layout.authorization_dialog);
         authorizationDialog.setOnSignInListener(new AuthorizationDialog.SignInListener() {
             @Override
             public void onSignIn(String login) {

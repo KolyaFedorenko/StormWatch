@@ -145,7 +145,8 @@ public class ProfileFragment extends Fragment implements ViewableFragment {
         clDeleteMyAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new AccountDeletingDialog(login).showDialog(getActivity());
+                new AccountDeletingDialog(login)
+                        .createDialog(getActivity(), true, R.layout.delete_account_dialog);
             }
         });
 

@@ -31,15 +31,8 @@ public class AccountDeletingDialog extends CustomDialog {
     }
 
     @Override
-    public void showDialog(Activity activity) {
-        final Dialog dialog = new Dialog(activity);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setCancelable(true);
-        dialog.setContentView(R.layout.delete_account_dialog);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        findViews(dialog);
-        useViews(dialog);
-        dialog.show();
+    public Dialog createDialog(Activity activity, boolean cancelable, int resource) {
+        return super.createDialog(activity, cancelable, resource);
     }
 
     @Override

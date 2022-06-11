@@ -30,16 +30,10 @@ public class CustomAlertDialog extends CustomDialog {
     }
 
     @Override
-    public void showDialog(Activity activity) {
-        final Dialog dialog = new Dialog(activity);
+    public Dialog createDialog(Activity activity, boolean cancelable, int resource) {
+        Dialog dialog = super.createDialog(activity, cancelable, resource);
         movieReference = getMovieReference(dialog);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setCancelable(true);
-        dialog.setContentView(R.layout.custom_dialog);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        findViews(dialog);
-        useViews(dialog);
-        dialog.show();
+        return dialog;
     }
 
     @Override
