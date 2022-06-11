@@ -1,7 +1,9 @@
 # WatchStorm
+[![CodeFactor](https://www.codefactor.io/repository/github/kolyafedorenko/stormwatch/badge)](https://www.codefactor.io/repository/github/kolyafedorenko/stormwatch)
 [![Language grade: Java](https://img.shields.io/lgtm/grade/java/g/KolyaFedorenko/StormWatch.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/KolyaFedorenko/StormWatch/context:java)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/KolyaFedorenko/StormWatch.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/KolyaFedorenko/StormWatch/alerts/)
 
+WatchStorm is a mobile app for adding ratings to movies or TV shows you've watched
 
 ### Features of WatchStorm:
 - Storing all data in Firebase Realtime Database and Firebase Storage
@@ -19,3 +21,9 @@
 | [bumptech/glide](https://github.com/bumptech/glide) | Load images by URL and insert them into ImageViews |
 | [google/volley](https://github.com/google/volley) | Send GET requests and receive JSON responses |
 | [google/gson](https://github.com/google/gson) | Serialize and deserialize JSON |
+
+### The code uses
+In addition to the usual classes, the code also uses
+- Interfaces
+- Abstract classes
+- Anonymous classes (interfaces containing only one method)
