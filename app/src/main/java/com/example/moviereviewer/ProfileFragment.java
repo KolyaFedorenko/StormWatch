@@ -52,6 +52,7 @@ public class ProfileFragment extends Fragment implements ViewableFragment {
     private TextView textLogin, textStatus;
     private CircleImageView imageProfile;
     private ConstraintLayout clFavoriteMovies, clDeleteMyAccount;
+    private ConstraintLayout clChangePassword;
     private RecyclerView recyclerViewFavorites;
 
     public ProfileFragment(String login) {
@@ -94,6 +95,7 @@ public class ProfileFragment extends Fragment implements ViewableFragment {
         clFavoriteMovies = view.findViewById(R.id.clFavoriteMovies);
         clDeleteMyAccount = view.findViewById(R.id.clDeleteMyAccount);
         recyclerViewFavorites = view.findViewById(R.id.recyclerViewFavorites);
+        clChangePassword = view.findViewById(R.id.clChangePassword);
     }
 
     @Override
@@ -153,6 +155,14 @@ public class ProfileFragment extends Fragment implements ViewableFragment {
                         signOutListener.onSignOut();
                     }
                 });
+            }
+        });
+
+        clChangePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new ChangePasswordDialog(login)
+                        .createDialog(getActivity(), true, R.layout.change_password_dialog);
             }
         });
 
