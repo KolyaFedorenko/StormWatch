@@ -41,4 +41,5 @@
     <string name="confirm_new_password">Confirm new password</string>
     <string name="password_change_instruction">Enter a new password in the text field
         below and confirm it, then click the change password button</string>
+    <string name="tag">\@%1$s</string>
 </resources>
