@@ -36,4 +36,10 @@
         please enter your username in the text field below and long press on it</string>
     <string name="deleting_confirmation">I really want to delete my account</string>
     <string name="your_username">Your Username</string>
+    <string name="password_change">Password Change</string>
+    <string name="new_password">New password</string>
+    <string name="confirm_new_password">Confirm new password</string>
+    <string name="password_change_instruction">Enter a new password in the text field
+        below and confirm it, then click the change password button</string>
+    <string name="tag">\@%1$s</string>
 </resources>

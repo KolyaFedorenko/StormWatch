@@ -49,9 +49,10 @@ public class ProfileFragment extends Fragment implements ViewableFragment {
     private boolean favoritesShowed = false;
 
     private Button buttonSingOut;
-    private TextView textLogin, textStatus;
+    private TextView textLogin, textTag;
     private CircleImageView imageProfile;
     private ConstraintLayout clFavoriteMovies, clDeleteMyAccount;
+    private ConstraintLayout clChangePassword;
     private RecyclerView recyclerViewFavorites;
 
     public ProfileFragment(String login) {
@@ -89,11 +90,12 @@ public class ProfileFragment extends Fragment implements ViewableFragment {
     public void findViews(View view) {
         buttonSingOut = view.findViewById(R.id.buttonSignOut);
         textLogin = view.findViewById(R.id.textLogin);
-        textStatus = view.findViewById(R.id.textStatus);
+        textTag = view.findViewById(R.id.textTag);
         imageProfile = view.findViewById(R.id.imageProfile);
         clFavoriteMovies = view.findViewById(R.id.clFavoriteMovies);
         clDeleteMyAccount = view.findViewById(R.id.clDeleteMyAccount);
         recyclerViewFavorites = view.findViewById(R.id.recyclerViewFavorites);
+        clChangePassword = view.findViewById(R.id.clChangePassword);
     }
 
     @Override
@@ -156,10 +158,20 @@ public class ProfileFragment extends Fragment implements ViewableFragment {
             }
         });
 
+        clChangePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new ChangePasswordDialog(login)
+                        .createDialog(getActivity(), true, R.layout.change_password_dialog);
+            }
+        });
+
         textLogin.setText(login);
         Glide.with(getActivity()).load(FirebaseStorage.getInstance().getReference()
                 .child(login + "/Images/ProfileImage"))
                 .into(imageProfile);
+
+        textTag.setText(getActivity().getString(R.string.tag, login).toLowerCase());
     }
 
     private void getFavoriteMovies(){
