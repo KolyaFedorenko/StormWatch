@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.bumptech.glide.Glide;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.firebase.database.DataSnapshot;
@@ -41,7 +42,7 @@ public class ProfileFragment extends Fragment implements ViewableFragment {
     }
     private SignOutListener signOutListener;
 
-    private String login;
+    private String login, verificationStatus;
     private StorageReference storageReference;
     private DatabaseReference databaseReference;
     private ArrayList<Movie> favoriteMovies;
@@ -52,8 +53,9 @@ public class ProfileFragment extends Fragment implements ViewableFragment {
     private TextView textLogin, textTag;
     private CircleImageView imageProfile;
     private ConstraintLayout clFavoriteMovies, clDeleteMyAccount;
-    private ConstraintLayout clChangePassword;
+    private ConstraintLayout clChangePassword, clVerification;
     private RecyclerView recyclerViewFavorites;
+    private LottieAnimationView lottieVerifyAccount, lottieVerifiedUser;
 
     public ProfileFragment(String login) {
         this.login = login;
@@ -74,7 +76,7 @@ public class ProfileFragment extends Fragment implements ViewableFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("WatchStorm/" + login + "/Movies");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("WatchStorm/" + login);
         storageReference = FirebaseStorage.getInstance().getReference(login + "/Images");
         findViews(view);
         return view;
@@ -96,10 +98,14 @@ public class ProfileFragment extends Fragment implements ViewableFragment {
         clDeleteMyAccount = view.findViewById(R.id.clDeleteMyAccount);
         recyclerViewFavorites = view.findViewById(R.id.recyclerViewFavorites);
         clChangePassword = view.findViewById(R.id.clChangePassword);
+        clVerification = view.findViewById(R.id.clVerification);
+        lottieVerifyAccount = view.findViewById(R.id.lottieVerifyAccount);
+        lottieVerifiedUser = view.findViewById(R.id.lottieVerifiedUser);
     }
 
     @Override
     public void useViews() {
+        getUserVerificationStatus();
         favoriteMovies = new ArrayList<>();
         recyclerViewFavorites.setLayoutManager(new LinearLayoutManager(
                 getActivity(),
@@ -166,8 +172,17 @@ public class ProfileFragment extends Fragment implements ViewableFragment {
             }
         });
 
+        clVerification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new VerificationDialog(login, verificationStatus)
+                        .createDialog(getActivity(), true, R.layout.verification_dialog);
+            }
+        });
+
         textLogin.setText(login);
-        Glide.with(getActivity()).load(FirebaseStorage.getInstance().getReference()
+        Glide.with(getActivity())
+                .load(FirebaseStorage.getInstance().getReference()
                 .child(login + "/Images/ProfileImage"))
                 .into(imageProfile);
 
@@ -190,9 +205,27 @@ public class ProfileFragment extends Fragment implements ViewableFragment {
             public void onCancelled(@NonNull DatabaseError error) {  }
         };
         databaseReference
+                .child("Movies")
                 .orderByChild("compositeRating")
                 .equalTo(100)
                 .addValueEventListener(valueEventListener);
+    }
+
+    private void getUserVerificationStatus(){
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                verificationStatus = snapshot.child("Data").child("pathToImage").getValue(String.class);
+                if (verificationStatus.equals("verified")){
+                    lottieVerifiedUser.setVisibility(View.VISIBLE);
+                } else {
+                    lottieVerifiedUser.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) { }
+        });
     }
 
     @Override

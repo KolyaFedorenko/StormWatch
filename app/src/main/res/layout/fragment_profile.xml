@@ -55,6 +55,16 @@
                         android:textColor="@color/white"
                         android:textSize="16sp"/>
 
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/lottieVerifiedUser"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        app:layout_constraintStart_toEndOf="@id/textLogin"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:lottie_rawRes="@raw/verified_user"
+                        app:lottie_progress="0.5"
+                        android:visibility="gone"/>
+
                     <TextView
                         android:id="@+id/textTag"
                         android:layout_width="wrap_content"
@@ -68,26 +78,27 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/clWhatToWatch"
+                android:id="@+id/clVerification"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                app:layout_constraintTop_toBottomOf="@id/clProfile"
+                app:layout_constraintTop_toBottomOf="@id/clAppUsage"
                 android:background="@drawable/rounded_background"
                 android:layout_marginTop="10dp"
                 android:layout_marginHorizontal="15dp">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lottieVerifyAccount"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    android:background="@drawable/ic_what_to_watch"
-                    android:backgroundTint="@color/white"
-                    android:layout_marginStart="20dp"/>
+                    app:lottie_rawRes="@raw/verify_account"
+                    app:lottie_progress="0.5"
+                    android:layout_marginStart="16dp"/>
 
                 <TextView
-                    android:id="@+id/textWhatToWatch"
+                    android:id="@+id/textVerifyMyAccount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toTopOf="parent"
@@ -95,7 +106,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     android:textColor="@color/white"
-                    android:text="@string/what_i_can_watch_today"/>
+                    android:text="@string/verify_my_account"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -133,7 +144,7 @@
                 android:id="@+id/clChangePassword"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                app:layout_constraintTop_toBottomOf="@id/clAppUsage"
+                app:layout_constraintTop_toBottomOf="@id/clVerification"
                 android:background="@drawable/rounded_background"
                 android:layout_marginTop="10dp"
                 android:layout_marginHorizontal="15dp">
@@ -195,7 +206,7 @@
                 android:id="@+id/clFavoriteMovies"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/clWhatToWatch"
+                app:layout_constraintTop_toBottomOf="@id/clProfile"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:background="@drawable/rounded_background"
