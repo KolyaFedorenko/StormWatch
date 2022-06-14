@@ -42,7 +42,7 @@ public class ProfileFragment extends Fragment implements ViewableFragment {
     }
     private SignOutListener signOutListener;
 
-    private String login;
+    private String login, verificationStatus;
     private StorageReference storageReference;
     private DatabaseReference databaseReference;
     private ArrayList<Movie> favoriteMovies;
@@ -175,8 +175,8 @@ public class ProfileFragment extends Fragment implements ViewableFragment {
         clVerification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                lottieVerifyAccount.playAnimation();
-                lottieVerifyAccount.setMaxProgress(0.8f);
+                new VerificationDialog(login, verificationStatus)
+                        .createDialog(getActivity(), true, R.layout.verification_dialog);
             }
         });
 
@@ -215,7 +215,7 @@ public class ProfileFragment extends Fragment implements ViewableFragment {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String verificationStatus = snapshot.child("Data").child("pathToImage").getValue(String.class);
+                verificationStatus = snapshot.child("Data").child("pathToImage").getValue(String.class);
                 if (verificationStatus.equals("verified")){
                     lottieVerifiedUser.setVisibility(View.VISIBLE);
                 } else {

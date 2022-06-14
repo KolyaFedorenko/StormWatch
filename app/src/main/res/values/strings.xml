@@ -42,4 +42,12 @@
     <string name="password_change_instruction">Enter a new password in the text field
         below and confirm it, then click the change password button</string>
     <string name="tag">\@%1$s</string>
+    <string name="verification">Verification</string>
+    <string name="about_verified_status">Verified status can be obtained by users who have
+        rated at least 100 movies. The relationship between the number of movies you have
+        rated and the number of movies you need to get verified status is shown below:</string>
+    <string name="relation">%1$d/100</string>
+    <string name="account_already_verified">Your account has already been verified. If you want
+        to remove the verified status, click on the button below.</string>
+    <string name="remove_the_verified_status">Remove the verified status</string>
 </resources>
