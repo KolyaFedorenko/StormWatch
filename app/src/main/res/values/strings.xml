@@ -50,4 +50,24 @@
     <string name="account_already_verified">Your account has already been verified. If you want
         to remove the verified status, click on the button below.</string>
     <string name="remove_the_verified_status">Remove the verified status</string>
+    <string name="instruction">Instruction</string>
+    <string name="adding_a_movie">Adding a movie</string>
+    <string name="adding_a_movie_info">To add a movie, go to the \"Add\" tab. You can enter
+        the title of the movie and click the search button to search for the movie in the
+        movie database and fill in some fields, or you can enter all the values ​​yourself.
+        After filling in all the fields, click on the "Save Rating For This Movie" button
+        to add the movie to your movie list.</string>
+    <string name="movies_list">Movies List</string>
+    <string name="movies_list_info">To view a list of movies you have rated, go to the
+        \"Movies\" tab. It displays a list of movies you have rated with all the information
+        about each movie. If you want to remove any movie from this list, long press on it
+        and click \"Delete this movie\" in the dialog that opens.Please note that when you
+        remove a movie from the list of movies you have rated, there is no way
+        to restore it.</string>
+    <string name="profile">Profile</string>
+    <string name="profile_info">To view your profile, go to the \"Profile\" tab. You can
+        change your profile picture by long pressing on it. Your profile also displays a
+        list of your favorite movies (movies with an average rating of 100%), as well as
+        items to change some of your profile settings. To change any of your profile settings,
+        click on the appropriate item and follow the instructions described there.</string>
 </resources>

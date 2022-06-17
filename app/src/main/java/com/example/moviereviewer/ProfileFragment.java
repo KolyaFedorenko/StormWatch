@@ -53,7 +53,7 @@ public class ProfileFragment extends Fragment implements ViewableFragment {
     private TextView textLogin, textTag;
     private CircleImageView imageProfile;
     private ConstraintLayout clFavoriteMovies, clDeleteMyAccount;
-    private ConstraintLayout clChangePassword, clVerification;
+    private ConstraintLayout clChangePassword, clVerification, clAppUsage;
     private RecyclerView recyclerViewFavorites;
     private LottieAnimationView lottieVerifyAccount, lottieVerifiedUser;
 
@@ -101,6 +101,7 @@ public class ProfileFragment extends Fragment implements ViewableFragment {
         clVerification = view.findViewById(R.id.clVerification);
         lottieVerifyAccount = view.findViewById(R.id.lottieVerifyAccount);
         lottieVerifiedUser = view.findViewById(R.id.lottieVerifiedUser);
+        clAppUsage = view.findViewById(R.id.clAppUsage);
     }
 
     @Override
@@ -177,6 +178,14 @@ public class ProfileFragment extends Fragment implements ViewableFragment {
             public void onClick(View v) {
                 new VerificationDialog(login, verificationStatus)
                         .createDialog(getActivity(), true, R.layout.verification_dialog);
+            }
+        });
+
+        clAppUsage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new InstructionDialog()
+                        .createDialog(getActivity(), true, R.layout.instruction_dialog);
             }
         });
 
