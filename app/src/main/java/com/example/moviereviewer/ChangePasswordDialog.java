@@ -64,9 +64,7 @@ public class ChangePasswordDialog extends CustomDialog {
             @Override
             public void onClick(View v) {
                 try {
-                    PasswordHasher passwordHasher = new PasswordHasher();
-                    String hashedPassword = passwordHasher
-                            .generatePasswordHash(dialogEditNewPassword.getText().toString());
+                    String hashedPassword = PasswordHasher.generatePasswordHash(dialogEditNewPassword.getText().toString());
                     passwordReference.setValue(hashedPassword);
                     dialog.dismiss();
                 } catch (Exception ignored) { }

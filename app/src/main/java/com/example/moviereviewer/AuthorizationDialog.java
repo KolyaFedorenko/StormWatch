@@ -28,7 +28,6 @@ public class AuthorizationDialog extends CustomDialog {
     private EditText dialogEditLogin, dialogEditPassword;
     private Button dialogButtonSignIn, dialogButtonSignUp;
     private String login, password, hashedPassword;
-    private PasswordHasher passwordHasher = new PasswordHasher();
     private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("WatchStorm");
 
     @Override
@@ -57,7 +56,7 @@ public class AuthorizationDialog extends CustomDialog {
                         try{
                             User receivedUser = snapshot.getValue(User.class);
                             if (receivedUser.getLogin().equals(login)
-                                    && passwordHasher
+                                    && PasswordHasher
                                     .validatePassword(password, receivedUser.getPassword())) {
                                 if (signInListener != null) signInListener.onSignIn(login);
                                 dialog.dismiss();
@@ -95,7 +94,7 @@ public class AuthorizationDialog extends CustomDialog {
         try{
             login = dialogEditLogin.getText().toString();
             password = dialogEditPassword.getText().toString();
-            hashedPassword = passwordHasher.generatePasswordHash(password);
+            hashedPassword = PasswordHasher.generatePasswordHash(password);
         } catch (Exception ignored) { }
     }
 
