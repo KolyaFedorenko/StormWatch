@@ -10,7 +10,7 @@ import javax.crypto.spec.PBEKeySpec;
 
 public class PasswordHasher {
 
-    public String generatePasswordHash(String password) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    public static String generatePasswordHash(String password) throws NoSuchAlgorithmException, InvalidKeySpecException {
         char[] chars = password.toCharArray();
         byte[] salt = getSalt();
 
@@ -21,14 +21,14 @@ public class PasswordHasher {
         return toHex(salt) + toHex(hash);
     }
 
-    private byte[] getSalt() throws NoSuchAlgorithmException{
+    private static byte[] getSalt() throws NoSuchAlgorithmException{
         SecureRandom secureRandom = SecureRandom.getInstance("SHA1PRNG");
         byte[] salt = new byte[16];
         secureRandom.nextBytes(salt);
         return salt;
     }
 
-    private String toHex(byte[] array) throws NoSuchAlgorithmException{
+    private static String toHex(byte[] array) throws NoSuchAlgorithmException{
         BigInteger bigInteger = new BigInteger(1, array);
         String hex = bigInteger.toString(16);
 
@@ -41,7 +41,7 @@ public class PasswordHasher {
         }
     }
 
-    public boolean validatePassword(String passwordToCheck, String passwordFromDB) throws NoSuchAlgorithmException, InvalidKeySpecException{
+    public static boolean validatePassword(String passwordToCheck, String passwordFromDB) throws NoSuchAlgorithmException, InvalidKeySpecException{
 
         byte[] salt = fromHex(passwordFromDB.substring(0,32));
         byte[] hash = fromHex(passwordFromDB.substring(32, 156));
@@ -58,7 +58,7 @@ public class PasswordHasher {
         return diff == 0;
     }
 
-    private byte[] fromHex(String hex) throws NoSuchAlgorithmException
+    private static byte[] fromHex(String hex) throws NoSuchAlgorithmException
     {
         byte[] bytes = new byte[hex.length() / 2];
         for(int i = 0; i < bytes.length ;i++)
