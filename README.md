@@ -7,10 +7,11 @@ WatchStorm is a mobile app for adding ratings to movies or TV shows you've watch
 
 ### Features of WatchStorm:
 - Storing all data in Firebase Realtime Database and Firebase Storage
-- Automatic movie search by name
+- Automatic movie search by title
 - Score movies on three dimensions: plot, cast and visuals
 - Calculating the average user rating for each movie
 - Displaying the average rating of a movie if the movie was found via search
+- Verification system that allows the most active users to verify their account
 
 ### Libraries used
 | Used library | Used to |
@@ -26,4 +27,4 @@ WatchStorm is a mobile app for adding ratings to movies or TV shows you've watch
 In addition to the usual classes, the code also uses
 - Interfaces
 - Abstract classes
-- Anonymous classes (interfaces containing only one method)
+- Custom Views
