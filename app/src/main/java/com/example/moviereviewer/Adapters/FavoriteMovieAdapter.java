@@ -1,4 +1,4 @@
-package com.example.moviereviewer;
+package com.example.moviereviewer.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.moviereviewer.DataClasses.Movie;
+import com.example.moviereviewer.R;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.firebase.storage.FirebaseStorage;
 

@@ -1,4 +1,4 @@
-package com.example.moviereviewer;
+package com.example.moviereviewer.Interfaces;
 
 import android.view.View;
 

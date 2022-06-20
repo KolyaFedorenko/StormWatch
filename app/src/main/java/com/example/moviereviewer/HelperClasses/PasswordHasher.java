@@ -1,4 +1,4 @@
-package com.example.moviereviewer;
+package com.example.moviereviewer.HelperClasses;
 
 import java.math.BigInteger;
 import java.security.NoSuchAlgorithmException;

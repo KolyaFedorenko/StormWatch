@@ -1,17 +1,16 @@
-package com.example.moviereviewer;
+package com.example.moviereviewer.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.Toast;
 
+import com.example.moviereviewer.Adapters.ViewPagerAdapter;
+import com.example.moviereviewer.Dialogs.AuthorizationDialog;
+import com.example.moviereviewer.Fragments.ProfileFragment;
+import com.example.moviereviewer.R;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 

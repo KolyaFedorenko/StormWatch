@@ -1,17 +1,17 @@
-package com.example.moviereviewer;
+package com.example.moviereviewer.Dialogs;
 
 import android.app.Activity;
 import android.app.Dialog;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.example.moviereviewer.HelperClasses.PasswordHasher;
+import com.example.moviereviewer.R;
+import com.example.moviereviewer.DataClasses.User;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
