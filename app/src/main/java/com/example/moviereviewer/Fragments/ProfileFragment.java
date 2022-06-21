@@ -1,4 +1,4 @@
-package com.example.moviereviewer;
+package com.example.moviereviewer.Fragments;
 
 import android.app.Activity;
 import android.content.Context;
@@ -22,6 +22,14 @@ import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.bumptech.glide.Glide;
+import com.example.moviereviewer.Dialogs.AccountDeletingDialog;
+import com.example.moviereviewer.Dialogs.ChangePasswordDialog;
+import com.example.moviereviewer.Adapters.FavoriteMovieAdapter;
+import com.example.moviereviewer.Dialogs.InstructionDialog;
+import com.example.moviereviewer.DataClasses.Movie;
+import com.example.moviereviewer.R;
+import com.example.moviereviewer.Dialogs.VerificationDialog;
+import com.example.moviereviewer.ViewableFragment;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -155,7 +163,7 @@ public class ProfileFragment extends Fragment implements ViewableFragment {
             @Override
             public void onClick(View v) {
                 AccountDeletingDialog accountDeletingDialog = new AccountDeletingDialog(login);
-                accountDeletingDialog.createDialog(getActivity(), true, R.layout.delete_account_dialog);
+                accountDeletingDialog.createDialog(getActivity(), true, R.layout.dialog_delete_account);
                 accountDeletingDialog.setOnAccountDeleteListener(new AccountDeletingDialog.OnAccountDeleteListener() {
                     @Override
                     public void onAccountDelete() {
@@ -169,7 +177,7 @@ public class ProfileFragment extends Fragment implements ViewableFragment {
             @Override
             public void onClick(View v) {
                 new ChangePasswordDialog(login)
-                        .createDialog(getActivity(), true, R.layout.change_password_dialog);
+                        .createDialog(getActivity(), true, R.layout.dialog_change_password);
             }
         });
 
@@ -177,7 +185,7 @@ public class ProfileFragment extends Fragment implements ViewableFragment {
             @Override
             public void onClick(View v) {
                 new VerificationDialog(login, verificationStatus)
-                        .createDialog(getActivity(), true, R.layout.verification_dialog);
+                        .createDialog(getActivity(), true, R.layout.dialog_verification);
             }
         });
 
@@ -185,7 +193,7 @@ public class ProfileFragment extends Fragment implements ViewableFragment {
             @Override
             public void onClick(View v) {
                 new InstructionDialog()
-                        .createDialog(getActivity(), true, R.layout.instruction_dialog);
+                        .createDialog(getActivity(), true, R.layout.dialog_instruction);
             }
         });
 

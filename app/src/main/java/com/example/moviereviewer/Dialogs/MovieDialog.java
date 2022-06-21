@@ -1,21 +1,20 @@
-package com.example.moviereviewer;
+package com.example.moviereviewer.Dialogs;
 
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.view.View;
-import android.view.Window;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.moviereviewer.DataClasses.Movie;
+import com.example.moviereviewer.R;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 
-public class CustomAlertDialog extends CustomDialog {
+public class MovieDialog extends CustomDialog {
 
     private DatabaseReference movieReference;
     private Movie movie;
@@ -25,7 +24,7 @@ public class CustomAlertDialog extends CustomDialog {
     private static final String PREFS_FILE = "WatchStorm";
     private static final String PREF_LOGIN = "Login";
 
-    public CustomAlertDialog(Movie movie){
+    public MovieDialog(Movie movie){
         this.movie = movie;
     }
 

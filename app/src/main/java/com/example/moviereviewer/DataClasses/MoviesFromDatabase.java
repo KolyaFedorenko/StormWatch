@@ -1,4 +1,4 @@
-package com.example.moviereviewer;
+package com.example.moviereviewer.DataClasses;
 
 import java.util.List;
 import com.google.gson.annotations.Expose;

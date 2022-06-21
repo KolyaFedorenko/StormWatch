@@ -1,4 +1,4 @@
-package com.example.moviereviewer;
+package com.example.moviereviewer.Dialogs;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -7,6 +7,10 @@ import android.content.Context;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.moviereviewer.Adapters.InstructionAdapter;
+import com.example.moviereviewer.DataClasses.InstructionPage;
+import com.example.moviereviewer.R;
 
 import java.util.ArrayList;
 

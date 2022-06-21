@@ -1,4 +1,4 @@
-package com.example.moviereviewer;
+package com.example.moviereviewer.Adapters;
 
 import android.content.Context;
 import android.text.method.ScrollingMovementMethod;
@@ -9,6 +9,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.moviereviewer.DataClasses.InstructionPage;
+import com.example.moviereviewer.R;
 
 import java.util.List;
 
