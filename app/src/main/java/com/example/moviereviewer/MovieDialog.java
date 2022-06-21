@@ -15,7 +15,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 
-public class CustomAlertDialog extends CustomDialog {
+public class MovieDialog extends CustomDialog {
 
     private DatabaseReference movieReference;
     private Movie movie;
@@ -25,7 +25,7 @@ public class CustomAlertDialog extends CustomDialog {
     private static final String PREFS_FILE = "WatchStorm";
     private static final String PREF_LOGIN = "Login";
 
-    public CustomAlertDialog(Movie movie){
+    public MovieDialog(Movie movie){
         this.movie = movie;
     }
 
