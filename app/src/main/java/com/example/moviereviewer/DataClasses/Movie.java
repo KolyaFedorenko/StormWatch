@@ -1,4 +1,4 @@
-package com.example.moviereviewer;
+package com.example.moviereviewer.DataClasses;
 
 public class Movie {
     private String title;

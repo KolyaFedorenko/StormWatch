@@ -1,4 +1,4 @@
-package com.example.moviereviewer;
+package com.example.moviereviewer.Fragments;
 
 import android.app.Activity;
 import android.content.Context;
@@ -22,6 +22,14 @@ import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.bumptech.glide.Glide;
+import com.example.moviereviewer.Dialogs.AccountDeletingDialog;
+import com.example.moviereviewer.Dialogs.ChangePasswordDialog;
+import com.example.moviereviewer.Adapters.FavoriteMovieAdapter;
+import com.example.moviereviewer.Dialogs.InstructionDialog;
+import com.example.moviereviewer.DataClasses.Movie;
+import com.example.moviereviewer.R;
+import com.example.moviereviewer.Dialogs.VerificationDialog;
+import com.example.moviereviewer.ViewableFragment;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

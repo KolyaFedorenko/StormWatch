@@ -1,4 +1,4 @@
-package com.example.moviereviewer;
+package com.example.moviereviewer.Dialogs;
 
 import android.app.Activity;
 import android.app.Dialog;

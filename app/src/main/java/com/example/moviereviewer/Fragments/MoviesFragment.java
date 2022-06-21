@@ -1,4 +1,4 @@
-package com.example.moviereviewer;
+package com.example.moviereviewer.Fragments;
 
 import android.os.Bundle;
 
@@ -12,6 +12,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.moviereviewer.DataClasses.Movie;
+import com.example.moviereviewer.Adapters.MovieAdapter;
+import com.example.moviereviewer.Dialogs.MovieDialog;
+import com.example.moviereviewer.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

@@ -1,9 +1,13 @@
-package com.example.moviereviewer;
+package com.example.moviereviewer.Adapters;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
+
+import com.example.moviereviewer.Fragments.AddMovieFragment;
+import com.example.moviereviewer.Fragments.MoviesFragment;
+import com.example.moviereviewer.Fragments.ProfileFragment;
 
 public class ViewPagerAdapter extends FragmentStateAdapter {
 

@@ -1,4 +1,4 @@
-package com.example.moviereviewer;
+package com.example.moviereviewer.Fragments;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -26,11 +26,14 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.moviereviewer.DataClasses.Movie;
+import com.example.moviereviewer.DataClasses.MoviesFromDatabase;
+import com.example.moviereviewer.R;
+import com.example.moviereviewer.DataClasses.Rating;
+import com.example.moviereviewer.DataClasses.Result;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.chip.Chip;
-import com.google.android.material.chip.ChipGroup;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
