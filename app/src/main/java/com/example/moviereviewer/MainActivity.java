@@ -2,15 +2,10 @@ package com.example.moviereviewer;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -41,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements ProfileFragment.S
 
     private void showAuthorizationDialog(){
         AuthorizationDialog authorizationDialog = new AuthorizationDialog();
-        authorizationDialog.createDialog(this, false, R.layout.authorization_dialog);
+        authorizationDialog.createDialog(this, false, R.layout.dialog_authorization);
         authorizationDialog.setOnSignInListener(new AuthorizationDialog.SignInListener() {
             @Override
             public void onSignIn(String login) {

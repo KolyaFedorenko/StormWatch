@@ -78,6 +78,6 @@ public class MoviesFragment extends Fragment implements MovieAdapter.MovieAdapte
 
     @Override
     public void onItemLongPressed(Movie movie) {
-         new MovieDialog(movie).createDialog(getActivity(), true, R.layout.custom_dialog);
+         new MovieDialog(movie).createDialog(getActivity(), true, R.layout.dialog_movie);
     }
 }
