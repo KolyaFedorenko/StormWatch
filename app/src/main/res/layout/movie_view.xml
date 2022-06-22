@@ -34,8 +34,8 @@
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/rvMovieImage"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:src="@color/white"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -44,14 +44,14 @@
 
                 <com.google.android.material.progressindicator.CircularProgressIndicator
                     android:id="@+id/rvCompositeRating"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:indicatorColor="@color/yellow"
-                    app:indicatorSize="70dp"
+                    app:indicatorSize="55dp"
                     app:trackColor="@color/progressBarBack"
                     app:trackCornerRadius="50dp"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -72,7 +72,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     android:text="@string/movie_title"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textColor="@color/white"
                     android:textStyle="bold"/>
 
@@ -84,7 +84,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     android:textColor="@color/alphaWhite"
                     android:text="@string/movie_year"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     android:textStyle="bold"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
