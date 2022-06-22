@@ -5,6 +5,7 @@
         <item name="colorPrimary">@color/grayAccent</item>
         <item name="colorPrimaryDark">@color/grayAccent</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowSplashscreenContent">@drawable/splash_screen</item>
     </style>
 
     <style name="EditTextHint" parent="TextAppearance.AppCompat">
