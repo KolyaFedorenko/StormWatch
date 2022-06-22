@@ -70,4 +70,6 @@
         list of your favorite movies (movies with an average rating of 100%), as well as
         items to change some of your profile settings. To change any of your profile settings,
         click on the appropriate item and follow the instructions described there.</string>
+    <string name="search">Search</string>
+    <string name="found_movie_info">%1$s, %2$s</string>
 </resources>

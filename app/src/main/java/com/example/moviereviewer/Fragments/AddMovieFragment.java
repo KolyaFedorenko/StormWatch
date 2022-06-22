@@ -28,6 +28,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.moviereviewer.DataClasses.Movie;
 import com.example.moviereviewer.DataClasses.MoviesFromDatabase;
+import com.example.moviereviewer.Dialogs.SearchDialog;
 import com.example.moviereviewer.R;
 import com.example.moviereviewer.DataClasses.Rating;
 import com.example.moviereviewer.DataClasses.Result;
@@ -168,30 +169,12 @@ public class AddMovieFragment extends Fragment {
         }
     }
 
-    private void getMovieFromDatabase(String movieTitle){
-        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
-        String formattedTitle = movieTitle.replaceAll("\\s", "%20");
-        String url = "https://api.themoviedb.org/3/search/movie?api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb&query=" + formattedTitle;
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    Gson gson = new Gson();
-                    MoviesFromDatabase moviesFromDatabase = gson.fromJson(response, MoviesFromDatabase.class);
-                    Result result = moviesFromDatabase.getResults().get(0);
-                    setInfoInViews(result);
-                    receivedResult = result;
-                } catch (Exception e) {
-                    showToast("Cannot get movie poster from database!");
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                showToast("JSON don't getted!");
-            }
-        });
-        requestQueue.add(stringRequest);
+    private void getMovieFromDatabase(String movieTitle) {
+        SearchDialog searchDialog = new SearchDialog(movieTitle);
+        searchDialog.createDialog(getActivity(), true, R.layout.dialog_search);
+        if (!editMovieTitle.getText().toString().equals("")) {
+            searchDialog.getResultsFromDatabase(editMovieTitle.getText().toString());
+        }
     }
 
     private void setInfoInViews(Result result){
