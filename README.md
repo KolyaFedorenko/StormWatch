@@ -2,6 +2,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/kolyafedorenko/stormwatch/badge)](https://www.codefactor.io/repository/github/kolyafedorenko/stormwatch)
 [![Language grade: Java](https://img.shields.io/lgtm/grade/java/g/KolyaFedorenko/StormWatch.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/KolyaFedorenko/StormWatch/context:java)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/KolyaFedorenko/StormWatch.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/KolyaFedorenko/StormWatch/alerts/)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/KolyaFedorenko/StormWatch?color=brighteen)
 
 WatchStorm is a mobile app for adding ratings to movies or TV shows you've watched
 
@@ -10,7 +11,7 @@ WatchStorm is a mobile app for adding ratings to movies or TV shows you've watch
 - Automatic movie search by title
 - Score movies on three dimensions: plot, cast and visuals
 - Calculating the average user rating for each movie
-- Displaying the average rating of a movie if the movie was found via search
+- Displaying the average audience rating of a movie if the movie was found via search
 - Verification system that allows the most active users to verify their account
 
 ### Libraries used
