@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -18,6 +19,11 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class FoundMovieAdapter extends RecyclerView.Adapter<FoundMovieAdapter.ViewHolder> {
+
+    public interface OnMovieSelectedListener{
+        void onMovieSelected(Result result);
+    }
+    private OnMovieSelectedListener listener;
 
     private final List<Result> results;
     private final LayoutInflater inflater;
@@ -62,6 +68,13 @@ public class FoundMovieAdapter extends RecyclerView.Adapter<FoundMovieAdapter.Vi
         }
 
         holder.textFoundMovieInfo.setText(movieInfo);
+
+        holder.foundMovieView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (listener != null) listener.onMovieSelected(result);
+            }
+        });
     }
 
     @Override
@@ -72,12 +85,18 @@ public class FoundMovieAdapter extends RecyclerView.Adapter<FoundMovieAdapter.Vi
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public final CircleImageView foundMovieImage;
         public final TextView textFoundMovieTitle, textFoundMovieInfo;
+        public final ConstraintLayout foundMovieView;
 
         public ViewHolder(View view) {
             super(view);
             foundMovieImage = view.findViewById(R.id.foundMovieImage);
             textFoundMovieTitle = view.findViewById(R.id.textFoundMovieTitle);
             textFoundMovieInfo = view.findViewById(R.id.textFoundedMovieInfo);
+            foundMovieView = view.findViewById(R.id.foundMovieView);
         }
+    }
+
+    public void setListener(OnMovieSelectedListener listener) {
+        this.listener = listener;
     }
 }

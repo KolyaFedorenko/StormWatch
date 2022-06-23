@@ -27,6 +27,11 @@ import java.util.ArrayList;
 
 public class SearchDialog extends CustomDialog {
 
+    public interface OnMovieSelectedListener{
+        void onMovieSelected(Result result);
+    }
+    private OnMovieSelectedListener listener;
+
     private EditText dialogEditSearch;
     private ConstraintLayout dialogConstraintSearch;
     private RecyclerView dialogRecyclerFoundMovies;
@@ -34,6 +39,8 @@ public class SearchDialog extends CustomDialog {
     private FoundMovieAdapter adapter;
     private ArrayList<Result> results;
     private String movieToSearch;
+
+    private Dialog dialog;
     private Context context;
 
     public SearchDialog(String movieToSearch) {
@@ -43,6 +50,7 @@ public class SearchDialog extends CustomDialog {
     @Override
     public Dialog createDialog(Activity activity, boolean cancelable, int resource) {
         Dialog dialog = super.createDialog(activity, cancelable, resource);
+        this.dialog = dialog;
         this.context = dialog.getContext();
         return dialog;
     }
@@ -113,10 +121,21 @@ public class SearchDialog extends CustomDialog {
         }
         if (dialogRecyclerFoundMovies.getAdapter() == null) {
             adapter = new FoundMovieAdapter(context, results);
+            adapter.setListener(new FoundMovieAdapter.OnMovieSelectedListener() {
+                @Override
+                public void onMovieSelected(Result result) {
+                    if (listener != null) listener.onMovieSelected(result);
+                    dialog.dismiss();
+                }
+            });
             dialogRecyclerFoundMovies.setAdapter(adapter);
         } else {
             adapter.notifyDataSetChanged();
         }
         dialogRecyclerFoundMovies.setVisibility(View.VISIBLE);
+    }
+
+    public void setListener(OnMovieSelectedListener listener) {
+        this.listener = listener;
     }
 }

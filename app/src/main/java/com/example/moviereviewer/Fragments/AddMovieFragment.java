@@ -172,14 +172,26 @@ public class AddMovieFragment extends Fragment {
     private void getMovieFromDatabase(String movieTitle) {
         SearchDialog searchDialog = new SearchDialog(movieTitle);
         searchDialog.createDialog(getActivity(), true, R.layout.dialog_search);
+        searchDialog.setListener(new SearchDialog.OnMovieSelectedListener() {
+            @Override
+            public void onMovieSelected(Result result) {
+                setInfoInViews(result);
+            }
+        });
         if (!editMovieTitle.getText().toString().equals("")) {
             searchDialog.getResultsFromDatabase(editMovieTitle.getText().toString());
         }
     }
 
-    private void setInfoInViews(Result result){
-        editMovieTitle.setText(result.getTitle());
-        editMovieYear.setText(result.getReleaseDate().substring(0,4));
+    private void setInfoInViews(Result result) {
+        this.receivedResult = result;
+        if (result.getMediaType().equals("movie")) {
+            editMovieTitle.setText(result.getTitle());
+            editMovieYear.setText(result.getReleaseDate().substring(0, 4));
+        } else {
+            editMovieTitle.setText(result.getName());
+            editMovieYear.setText(result.getFirstAirDate().substring(0, 4));
+        }
         textSelectImage.setText(result.getPosterPath().toString().substring(1));
         editMovieDescription.setText(result.getOverview());
         if (editMovieDescription.getText().length() > 300) editMovieDescription.setTextSize(12f);

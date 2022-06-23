@@ -75,7 +75,7 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/rounded_background_light"
             android:clipToPadding="false"
-            android:paddingBottom="15dp"
+            android:paddingVertical="10dp"
             android:visibility="gone"
             app:layout_constraintHeight_max="220dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
