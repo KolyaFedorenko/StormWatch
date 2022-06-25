@@ -62,7 +62,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toEndOf="@id/clImageRating"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="5dp"
                 android:layout_marginVertical="2dp">
 
                 <TextView
@@ -72,7 +72,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     android:text="@string/movie_title"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     android:textColor="@color/white"
                     android:textStyle="bold"/>
 
@@ -84,7 +84,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     android:textColor="@color/alphaWhite"
                     android:text="@string/movie_year"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     android:textStyle="bold"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
