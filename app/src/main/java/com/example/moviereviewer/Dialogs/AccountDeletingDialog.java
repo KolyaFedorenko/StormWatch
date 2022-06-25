@@ -83,6 +83,7 @@ public class AccountDeletingDialog extends CustomDialog {
                 if (deletionConfirmed && listener != null) {
                     databaseReference.child(login).removeValue();
                     listener.onAccountDelete();
+                    dialog.dismiss();
                 }
             }
         });

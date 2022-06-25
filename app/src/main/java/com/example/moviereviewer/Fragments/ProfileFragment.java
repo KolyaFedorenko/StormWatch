@@ -63,7 +63,7 @@ public class ProfileFragment extends Fragment implements ViewableFragment {
     private ConstraintLayout clFavoriteMovies, clDeleteMyAccount;
     private ConstraintLayout clChangePassword, clVerification, clAppUsage;
     private RecyclerView recyclerViewFavorites;
-    private LottieAnimationView lottieVerifyAccount, lottieVerifiedUser;
+    private LottieAnimationView lottieVerifiedUser;
 
     public ProfileFragment(String login) {
         this.login = login;
@@ -107,7 +107,6 @@ public class ProfileFragment extends Fragment implements ViewableFragment {
         recyclerViewFavorites = view.findViewById(R.id.recyclerViewFavorites);
         clChangePassword = view.findViewById(R.id.clChangePassword);
         clVerification = view.findViewById(R.id.clVerification);
-        lottieVerifyAccount = view.findViewById(R.id.lottieVerifyAccount);
         lottieVerifiedUser = view.findViewById(R.id.lottieVerifiedUser);
         clAppUsage = view.findViewById(R.id.clAppUsage);
     }
@@ -232,12 +231,14 @@ public class ProfileFragment extends Fragment implements ViewableFragment {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                verificationStatus = snapshot.child("Data").child("pathToImage").getValue(String.class);
-                if (verificationStatus.equals("verified")){
-                    lottieVerifiedUser.setVisibility(View.VISIBLE);
-                } else {
-                    lottieVerifiedUser.setVisibility(View.GONE);
-                }
+                try{
+                    verificationStatus = snapshot.child("Data").child("pathToImage").getValue(String.class);
+                    if (verificationStatus.equals("verified")){
+                        lottieVerifiedUser.setVisibility(View.VISIBLE);
+                    } else {
+                        lottieVerifiedUser.setVisibility(View.GONE);
+                    }
+                } catch(Exception ignored) { }
             }
 
             @Override
