@@ -3,6 +3,7 @@
 [![Language grade: Java](https://img.shields.io/lgtm/grade/java/g/KolyaFedorenko/StormWatch.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/KolyaFedorenko/StormWatch/context:java)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/KolyaFedorenko/StormWatch.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/KolyaFedorenko/StormWatch/alerts/)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/KolyaFedorenko/StormWatch?color=brighteen)
+![GitHub Release Date](https://img.shields.io/github/release-date/KolyaFedorenko/StormWatch)
 
 WatchStorm is a mobile app for adding ratings to movies or TV shows you've watched
 
